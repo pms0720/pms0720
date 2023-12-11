@@ -1,0 +1,29 @@
+- 👋 Hi, I’m @pms0720
+- 👀 I’m interested in ...
+- 🌱 I’m currently learning ...
+- 💞️ I’m looking to collaborate on ...
+- 📫 How to reach me ...
+
+<!---
+pms0720/pms0720 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+--->
+import matplotlib.pyplot as plt
+import streamlit as st
+
+fig, ax = plt.subplots()
+
+c1 = st.sidebar.radio('선의 색을 선택하시오',['red', 'green', 'blue', 'purple','orange'])
+s1 = st.sidebar.radio('선의  스타일을 선택하시오',['-','--',':','-.'])
+m1 = st.sidebar.radio('마커의 스타일을 선택하시오',['o','^','s','p'])
+
+love = []
+y = []
+for i in range(-20,21,3):
+    love.append(i)
+    y.append(-2*i*i + 3*i + 5)
+
+
+plt.plot(love, y, color = c1, linestyle = s1, marker=m1)
+
+st.pyplot(fig)
